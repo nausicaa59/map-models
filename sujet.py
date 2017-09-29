@@ -1,7 +1,6 @@
 import pymysql
 import models.auteur as m_auteur
 from pony.orm import *
-from flask import g
 import datetime
 
 
@@ -13,7 +12,7 @@ def default():
 		"url" : "",
 		"title" : "inconnu",
 		"auteur" : "inconnu",
-		"nb_reponses" : "http://image.jeuxvideo.com/avatar-sm/s/a/sado-masogyne-1501334090-2b65db61ba647f1efffaa18e374f71ed.jpg",
+		"nb_reponses" : 0,
 		"initialised_at" : datetime.datetime.now()
 	}
 

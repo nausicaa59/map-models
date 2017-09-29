@@ -3,7 +3,7 @@ import datetime
 import json
 import time
 from pony.orm import *
-from flask import g
+
 
 def cleanDate(date):
 	return date.strftime('%Y-%m-%d %H-%M-%S') if date is not None else ""

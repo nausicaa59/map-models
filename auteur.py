@@ -3,7 +3,6 @@ import datetime
 import json
 import time
 from pony.orm import *
-from flask import g
 
 
 def default():
@@ -26,13 +25,13 @@ def default():
 def get(db, id):
 	with db_session:
 		auteur = db.Auteur[id]
-		return listA
+		return auteur
 
 
 def gets(db, nb = 10):
 	with db_session:
 		tab = select(p for p in db.Auteur)[:nb]
-		return listA
+		return tab
 
 
 def getByPseudo(db, pseudo):
