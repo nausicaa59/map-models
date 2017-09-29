@@ -1,5 +1,5 @@
 import pymysql
-import models.auteur as m_auteur
+import auteur as m_auteur
 from pony.orm import *
 import datetime
 
