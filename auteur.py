@@ -21,11 +21,19 @@ def default():
 		"coord_Y" : 0,	
 	}
 
-
 def get(db, id):
 	with db_session:
 		auteur = db.Auteur[id]
 		return auteur
+
+
+def getFull(db, id):
+	with db_session:
+		auteur = get(db, id)
+		sujets = [s.to_dict_prepara() for s in auteur.sujets]
+		result = auteur.to_dict_prepara()
+		result["sujets"] = sujets
+		return result
 
 
 def gets(db, nb = 10):
@@ -107,3 +115,9 @@ def update(db, info):
 				commit()
 	except Exception as e:
 		print("update", e)
+
+
+
+def countAll(db):
+	with db_session:
+		return count(c for c in db.Auteur)

@@ -17,6 +17,12 @@ def default():
 	}
 
 
+def get(db, id):
+	with db_session:
+		sujet = db.Sujet[id]
+		return sujet
+
+
 def getByUrl(db, url):
 	try:
 		with db_session:

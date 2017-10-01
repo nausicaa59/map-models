@@ -32,9 +32,9 @@ def prepareDb():
 
 		def to_dict_prepara(self):
 			base = self.to_dict()
-			base["created_at"] 			= ""
-			base["updated_at"] 			= ""
-			base["date_inscription"] 	= ""
+			base["created_at"] 			= base["created_at"].strftime('%Y-%m-%d %H:%M:%S')
+			base["updated_at"] 			= base["updated_at"].strftime('%Y-%m-%d %H:%M:%S')
+			base["date_inscription"] 	= base["date_inscription"].strftime('%Y-%m-%d %H:%M:%S')
 			return base
 
 
@@ -53,9 +53,9 @@ def prepareDb():
 
 		def to_dict_prepara(self):
 			base = self.to_dict()
-			base["created_at"] 		= ""
-			base["updated_at"] 		= ""
-			base["initialised_at"] 	= ""
+			base["created_at"] 		= base["created_at"].strftime('%Y-%m-%d %H:%M:%S')
+			base["updated_at"] 		= base["updated_at"].strftime('%Y-%m-%d %H:%M:%S')
+			base["initialised_at"] 	= base["initialised_at"].strftime('%Y-%m-%d %H:%M:%S')
 			return base
 
 
